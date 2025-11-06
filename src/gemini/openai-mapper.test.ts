@@ -142,9 +142,9 @@ describe("mapOpenAIChatCompletionRequestToGemini", () => {
         const result = mapOpenAIChatCompletionRequestToGemini("test-project", request);
 
         expect(result.request.tools).toBeDefined();
-        expect(result.request.tools?.functionDeclarations).toHaveLength(1);
-        
-        const functionDeclaration = result.request.tools?.functionDeclarations?.[0];
+        expect(result.request.tools?.[0]?.functionDeclarations).toHaveLength(1);
+
+        const functionDeclaration = result.request.tools?.[0]?.functionDeclarations?.[0];
         expect(functionDeclaration?.name).toBe("get_weather");
         expect(functionDeclaration?.description).toBe("Get weather information");
         expect(functionDeclaration?.parameters).toEqual({
@@ -580,7 +580,7 @@ describe("OpenAI tool conversion functions", () => {
 
         const result = mapOpenAIChatCompletionRequestToGemini("test-project", request);
         
-        const functionDeclaration = result.request.tools?.functionDeclarations?.[0];
+        const functionDeclaration = result.request.tools?.[0]?.functionDeclarations?.[0];
         expect(functionDeclaration).toEqual({
             name: "simple_function",
             description: "A simple function",
@@ -616,7 +616,7 @@ describe("OpenAI tool conversion functions", () => {
 
         const result = mapOpenAIChatCompletionRequestToGemini("test-project", request);
         
-        const functionDeclaration = result.request.tools?.functionDeclarations?.[0];
+        const functionDeclaration = result.request.tools?.[0]?.functionDeclarations?.[0];
         expect(functionDeclaration).toEqual({
             name: "no_params",
             description: "Function with no parameters",

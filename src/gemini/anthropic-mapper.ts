@@ -29,9 +29,9 @@ export const mapAnthropicMessagesRequestToGemini = (
 
     // Handle tools
     if (request.tools) {
-        geminiRequest.tools = {
+        geminiRequest.tools = [{
             functionDeclarations: request.tools.map(convertAnthropicToolToGemini)
-        };
+        }];
     }
 
     // Handle tool choice

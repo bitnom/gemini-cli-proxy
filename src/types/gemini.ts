@@ -6,9 +6,9 @@ export enum Model {
 export type ChatCompletionRequestBody = {
     contents: ChatMessage[];
     systemInstruction?: SystemInstruction;
-    tools?: {
-        functionDeclarations: FunctionDeclaration[] | undefined;
-    };
+    tools?: Array<{
+        functionDeclarations?: FunctionDeclaration[];
+    }>;
     toolConfig?: ToolConfig;
     generationConfig?: {
         temperature?: number;

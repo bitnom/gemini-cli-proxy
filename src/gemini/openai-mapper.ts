@@ -22,7 +22,7 @@ export const mapOpenAIChatCompletionRequestToGemini = (
         geminiRequest.systemInstruction = mapSystemInstruction(messages);
     }
     if (request.tools) {
-        geminiRequest.tools = {functionDeclarations: request.tools?.map((tool) => convertOpenAIFunctionToGemini(tool.function))};
+        geminiRequest.tools = [{functionDeclarations: request.tools?.map((tool) => convertOpenAIFunctionToGemini(tool.function))}];
     }
     if (request.tool_choice) {
         geminiRequest.toolConfig = mapToolChoiceToToolConfig(request.tool_choice);
