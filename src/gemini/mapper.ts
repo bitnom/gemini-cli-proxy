@@ -3,7 +3,7 @@ import type {JsonSchema} from "../types/types.js";
 
 export const mapModelToGemini = (model?: string): Gemini.Model => {
     if (model === undefined) {
-        return Gemini.Model.Gemini25Pro;
+        return Gemini.Model.Gemini3ProPreview;
     }
 
     // Check if the model string is one of the valid enum values
@@ -12,7 +12,7 @@ export const mapModelToGemini = (model?: string): Gemini.Model => {
         return model as Gemini.Model;
     }
 
-    return Gemini.Model.Gemini25Pro;
+    return Gemini.Model.Gemini3ProPreview;
 };
 
 

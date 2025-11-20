@@ -4,9 +4,9 @@ import type {JsonSchema} from "../types/types.js";
 import * as Gemini from "../types/gemini.js";
 
 describe("mapModelToGemini", () => {
-    it("should return Gemini25Pro for undefined model", () => {
+    it("should return Gemini3ProPreview for undefined model", () => {
         const result = mapModelToGemini(undefined);
-        expect(result).toBe(Gemini.Model.Gemini25Pro);
+        expect(result).toBe(Gemini.Model.Gemini3ProPreview);
     });
 
     it("should return valid Gemini model for existing model key", () => {
@@ -14,9 +14,9 @@ describe("mapModelToGemini", () => {
         expect(result).toBe(Gemini.Model.Gemini25Flash);
     });
 
-    it("should return Gemini25Pro for unknown model", () => {
+    it("should return Gemini3ProPreview for unknown model", () => {
         const result = mapModelToGemini("unknown-model" as Gemini.Model);
-        expect(result).toBe(Gemini.Model.Gemini25Pro);
+        expect(result).toBe(Gemini.Model.Gemini3ProPreview);
     });
 
     it("should handle all valid Gemini models", () => {

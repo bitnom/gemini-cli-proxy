@@ -18,7 +18,7 @@ describe("mapAnthropicMessagesRequestToGemini", () => {
 
         const result = mapAnthropicMessagesRequestToGemini("test-project", request);
 
-        expect(result.model).toBe(Gemini.Model.Gemini25Pro);
+        expect(result.model).toBe(Gemini.Model.Gemini3ProPreview);
         expect(result.project).toBe("test-project");
         expect(result.request.contents).toHaveLength(1);
         expect(result.request.contents[0].role).toBe("user");
