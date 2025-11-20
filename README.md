@@ -35,7 +35,7 @@ Options:
 
 If you have NOT used Gemini CLI before, you will be prompted to log in to Gemini CLI App through browser. Credentials will be saved in the folder (`~/.gemini/oauth_creds.json`) used by Gemini CLI.
 
-`gemini-2.5-pro` is the default model when you request a model other than `gemini-2.5-pro` or `gemini-2.5-flash`
+`gemini-3-pro-preview` is the default model when you request a model other than `gemini-3-pro-preview` or `gemini-2.5-flash`
 
 ### Use with -insert-your-favorite-agentic-tool-here-
 
@@ -60,7 +60,7 @@ Add the following env fields to `.claude/settings.json` file
   "env": {
     "ANTHROPIC_BASE_URL": "http://localhost:3000/anthropic",
     "ANTHROPIC_AUTH_TOKEN": "NotImportant",
-    "ANTHROPIC_MODEL": "gemini-2.5-pro"
+    "ANTHROPIC_MODEL": "gemini-3-pro-preview"
   }
 }
 ```
