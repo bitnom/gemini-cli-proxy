@@ -11,7 +11,7 @@ export function createOpenAIRouter(geminiClient: GeminiApiClient): express.Route
     const router = express.Router();
     const logger = getLogger("SERVER-OPENAI", chalk.green);
 
-    router.get("/models", (_req, res) => {
+    router.get("/v1/models", (_req, res) => {
         const modelData = Object.values(Gemini.Model).map((modelId) => ({
             id: modelId,
             object: "model",
@@ -25,7 +25,7 @@ export function createOpenAIRouter(geminiClient: GeminiApiClient): express.Route
         });
     });
 
-    router.post("/chat/completions", async (req, res) => {
+    router.post("/v1/chat/completions", async (req, res) => {
         try {
             const body = req.body as OpenAI.ChatCompletionRequest;
             if (!body.messages.length) {

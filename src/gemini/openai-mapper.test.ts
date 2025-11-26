@@ -17,7 +17,7 @@ describe("mapOpenAIChatCompletionRequestToGemini", () => {
 
         const result = mapOpenAIChatCompletionRequestToGemini("test-project", request);
 
-        expect(result.model).toBe(Gemini.Model.Gemini3ProPreview);
+        expect(result.model).toBe(Gemini.Model.Gemini25Pro);
         expect(result.project).toBe("test-project");
         expect(result.request.contents).toHaveLength(1);
         expect(result.request.contents[0].role).toBe("user");
@@ -620,7 +620,7 @@ describe("OpenAI tool conversion functions", () => {
         expect(functionDeclaration).toEqual({
             name: "no_params",
             description: "Function with no parameters",
-            parameters: undefined
+            parameters: {}
         });
     });
 });
